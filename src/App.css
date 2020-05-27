@@ -8,3 +8,8 @@
   background-color: hsl(180, 29%, 50%);
   color: hsl(180, 14%, 20%)
 }
+
+.job-company {
+  display: flex;
+  align-items: center;
+}
