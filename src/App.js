@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import bgHeaderDesktop from "./Components/images/bg-header-desktop.svg";
+import bgHeaderDesktop from "./bg-header-desktop.svg";
 import JobList from "./Components/JobList";
 
 function App() {
