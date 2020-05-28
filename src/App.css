@@ -6,6 +6,7 @@
   width: 1440px;
   background-color: hsl(180, 29%, 50%);
   color: hsl(180, 14%, 20%);
+
 }
 
 .container {
@@ -14,10 +15,11 @@
 
 .row {
   display: flex;
-  align-items: center;
   background-color: white;
   padding: 20px;
   box-shadow: 1px 5px 15px hsl(180, 8%, 52%);
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .logo-job {
@@ -26,7 +28,6 @@
 }
 
 .content-job {
-  flex-direction: column;
   margin-left: 20px;
 }
 
@@ -59,15 +60,52 @@
   line-height: 2;
 }
 
-
 .role-level {
-  width: 300px;
+  margin-left: auto;
   display: flex;
-  align-content: flex-end;
-  align-items: flex-end;
-  justify-content: flex-end;
+  align-content: center;
+  flex-wrap: wrap;
 }
 
-.level {
+
+.languages {
+  display: flex;
   margin-left: 10px;
+}
+
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 10px;
+  align-items: center;
+}
+
+button {
+  margin: 10px;
+  background-color: hsl(180, 31%, 95%);
+  color: hsl(180, 29%, 50%);
+  padding: 5px;
+  font-size: 15px;
+  border: none;
+}
+
+@media (max-width:500px) {
+  .role-level {
+    margin: auto;
+    justify-content: center;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  header img {
+    width: 375px;
+  }
+
+  .App-header {
+    width: 375px;
+
+  }
+
 }

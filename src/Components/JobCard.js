@@ -7,7 +7,7 @@ const JobCard = (props) => {
         <div className="logo-job">
           <img src={props.data.logo} alt="logo" />
         </div>
-        <div className="content-job col-6">
+        <div className="content-job">
           <div className="company">
             <p>{props.data.company}</p>
 
@@ -25,12 +25,29 @@ const JobCard = (props) => {
             </p>
           </div>
         </div>
+        <div>
+          <hr></hr>
+        </div>
 
-        <div className="role-level col-4">
-          <div className="role">{props.data.role}</div>
-          <div className="level">{props.data.level}</div>
-          <div>dsadas</div>
-          <div>dasdasda</div>
+        <div className="role-level">
+          <button className="role">{props.data.role}</button>
+
+          <button className="level">{props.data.level}</button>
+
+          <div className="languages">
+            {props.data.languages.map((language, index) => (
+              <button className="language" key={index}>
+                {language}
+              </button>
+            ))}
+          </div>
+          <div className="tools">
+            {props.data.tools.map((tool, index) => (
+              <button className="tool" key={index}>
+                {tool}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
     </div>
