@@ -7,23 +7,30 @@ const JobCard = (props) => {
         <div className="logo-job">
           <img src={props.data.logo} alt="logo" />
         </div>
-        <div className="content-job">
-          <div className="job-company">
-            <div>
-              <p>{props.data.company}</p>
-            </div>
-            <div>
-              <h3>NEW!</h3>
-            </div>
-            <div>
-              <h3>FEATURED</h3>
-            </div>
+        <div className="content-job col-6">
+          <div className="company">
+            <p>{props.data.company}</p>
+
+            <p className="new">{props.data.new ? "new!" : ""}</p>
+
+            <p className="featured">{props.data.featured ? "featured" : ""}</p>
           </div>
 
-          <h1>Title</h1>
-          <p>
-            ALEX <span>&#xb7;</span>
-          </p>
+          <div>
+            <h4>{props.data.position}</h4>
+            <p>
+              {props.data.postedAt}
+              <span>&#xb7;</span> {props.data.contract} <span>&#xb7;</span>
+              {props.data.location}
+            </p>
+          </div>
+        </div>
+
+        <div className="role-level col-4">
+          <div className="role">{props.data.role}</div>
+          <div className="level">{props.data.level}</div>
+          <div>dsadas</div>
+          <div>dasdasda</div>
         </div>
       </div>
     </div>
