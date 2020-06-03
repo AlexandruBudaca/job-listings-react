@@ -3,7 +3,9 @@
 }
 
 .App-header {
-  width: 1440px;
+  width: 1920px;
+  height: 156px;
+  background-image: url(./bg-header-desktop.svg);
   background-color: hsl(180, 29%, 50%);
   color: hsl(180, 14%, 20%);
 
@@ -89,6 +91,15 @@ button {
   border: none;
 }
 
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
 @media (max-width:500px) {
   .role-level {
     margin: auto;
@@ -97,15 +108,6 @@ button {
 
   .row {
     flex-direction: column;
-  }
-
-  header img {
-    width: 375px;
-  }
-
-  .App-header {
-    width: 375px;
-
   }
 
 }

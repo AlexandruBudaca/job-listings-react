@@ -3,22 +3,32 @@ import AboutJob from "./AboutJob";
 import Languages from "./Languages";
 import Tools from "./Tools";
 
-const JobCard = (props) => {
+const JobCard = ({ data, addToFilter, setButtonsValue, buttonsValues }) => {
   return (
     <div className="container">
       <div className="row">
         <div className="logo-job">
-          <img src={props.data.logo} alt="logo" />
+          <img src={data.logo} alt="logo" />
         </div>
-        <AboutJob AboutJobData={props.data} />
+        <AboutJob AboutJobData={data} />
         <div>
           <hr></hr>
         </div>
         <div className="role-level">
-          <button className="role">{props.data.role}</button>
-          <button className="level">{props.data.level}</button>
-          <Languages languages={props.data.languages} />
-          <Tools tools={props.data.tools} />
+          <button
+            key={data.id}
+            value={data.role}
+            className="role"
+            onClick={(e) => {
+              buttonsValues(e);
+              addToFilter(data.role);
+            }}
+          >
+            {data.role}
+          </button>
+          <button className="level">{data.level}</button>
+          <Languages languages={data.languages} />
+          <Tools tools={data.tools} />
         </div>
       </div>
     </div>
