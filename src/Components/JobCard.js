@@ -4,6 +4,7 @@ import Languages from "./Languages";
 import Tools from "./Tools";
 
 const JobCard = ({ data, addToFilter, setButtonsValue, buttonsValues }) => {
+  const roleName = data.role;
   return (
     <div className="container">
       <div className="row">
@@ -17,14 +18,14 @@ const JobCard = ({ data, addToFilter, setButtonsValue, buttonsValues }) => {
         <div className="role-level">
           <button
             key={data.id}
-            value={data.role}
+            value={roleName}
             className="role"
             onClick={(e) => {
               buttonsValues(e);
               addToFilter(data.role);
             }}
           >
-            {data.role}
+            {roleName.charAt(0).toUpperCase() + roleName.toLowerCase().slice(1)}
           </button>
           <button className="level">{data.level}</button>
           <Languages languages={data.languages} />
