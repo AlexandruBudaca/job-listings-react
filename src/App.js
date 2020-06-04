@@ -1,41 +1,44 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import jobsData from "./data.json";
 import JobsList from "./Components/JobsList";
 import FilterBox from "./Components/FilterBox";
 
 function App() {
-  const [data, setData] = useState([]);
-  const [filterJobs, setFilterJobs] = useState([]);
-  const [buttonsValue, setButtonsValue] = useState([]);
+  const [filters, setFilters] = useState([]);
 
-  useEffect(() => {
-    setData(jobsData);
-  }, []);
-
-  const addToFilter = (job) => {
-    setFilterJobs((jobs) => [...jobs, job]);
-    const some = data.filter((jobs) => jobs.role.includes(buttonsValue));
-    setData(some);
+  const addToFilter = (newFilter) => {
+    if (!filters.includes(newFilter)) {
+      setFilters([...filters, newFilter]);
+    }
   };
+  a;
+
+  const removeFromFilter = (filterToRemove) => {
+    setFilters(filters.filter((filter) => filter !== filterToRemove));
+  };
+  const filteredJobs =
+    filters.length === 0
+      ? jobsData
+      : jobsData.filter((job) => {
+          const filterableValues = [job.role, job.level];
+
+          return filters.includes((filter) =>
+            filterableValues
+              .map((_) => _.toLowerCase())
+              .includes(filter.toLowerCase())
+          );
+        });
 
   return (
     <div className="App">
       <header className="App-header"></header>
       <div>
-        <FilterBox
-          data={filterJobs}
-          setFilterJobs={setFilterJobs}
-          setButtonsValue={setButtonsValue}
-          setData={setData}
-        />
+        <FilterBox data={filters} onclick={removeFromFilter} />
       </div>
       <JobsList
-        data={data}
-        setData={setData}
-        setFilterJobs={setFilterJobs}
-        buttonsValue={buttonsValue}
-        setButtonsValue={setButtonsValue}
+        data={filteredJobs}
+        setFilterJobs={setFilters}
         addToFilter={addToFilter}
       />
       <div className="attribution">

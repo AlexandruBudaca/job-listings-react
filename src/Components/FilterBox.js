@@ -1,19 +1,14 @@
 import React from "react";
-import jobsData from "../data.json";
 
-const FilterBox = ({ data, setFilterJobs, setData }) => {
-  const removeFromFilter = (job) => {
-    setFilterJobs(data.filter((role) => role.id !== job.id));
-    setData(jobsData);
-  };
+const FilterBox = ({ data, onclick }) => {
   return (
     <div>
       {data.map((role) => (
         <button
           className="role"
-          key={role.id}
+          key={role}
           onClick={() => {
-            removeFromFilter(role);
+            onclick(role);
           }}
         >
           {role}

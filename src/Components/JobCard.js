@@ -3,7 +3,7 @@ import AboutJob from "./AboutJob";
 import Languages from "./Languages";
 import Tools from "./Tools";
 
-const JobCard = ({ data, addToFilter, setButtonsValue, buttonsValues }) => {
+const JobCard = ({ data, addToFilter }) => {
   const roleName = data.role;
   return (
     <div className="container">
@@ -20,14 +20,13 @@ const JobCard = ({ data, addToFilter, setButtonsValue, buttonsValues }) => {
             key={data.id}
             value={roleName}
             className="role"
-            onClick={(e) => {
-              buttonsValues(e);
-              addToFilter(data.role);
-            }}
+            onClick={() => addToFilter(data.role)}
           >
             {roleName.charAt(0).toUpperCase() + roleName.toLowerCase().slice(1)}
           </button>
-          <button className="level">{data.level}</button>
+          <button className="level" onClick={() => addToFilter(data.level)}>
+            {data.level}
+          </button>
           <Languages languages={data.languages} />
           <Tools tools={data.tools} />
         </div>
