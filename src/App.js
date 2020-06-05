@@ -28,12 +28,18 @@ function App() {
           filterableValues.push(...job.tools);
           return filters.every((filter) => filterableValues.includes(filter));
         });
-
+  const setClear = () => {
+    setFilters([]);
+  };
   return (
     <div className="App">
       <header className="App-header"></header>
       <div>
-        <FilterBox data={filters} onclick={removeFromFilter} />
+        <FilterBox
+          data={filters}
+          onclick={removeFromFilter}
+          setClear={setClear}
+        />
       </div>
       <JobsList
         data={filteredJobs}
