@@ -5,7 +5,7 @@ const Languages = (props) => {
     <div className="languages">
       {props.languages.map((language, index) => (
         <button
-          className="language"
+          className="btn"
           key={index}
           onClick={() => {
             props.addToFilter(language);

@@ -82,37 +82,93 @@
   align-items: center;
 }
 
+.row-filter {
+  visibility: visible;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 1px 5px 15px hsl(180, 8%, 52%);
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.row-filter-hidden {
+  visibility: hidden;
+
+}
+
+.filter-box {
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.filter-box a:link {
+  text-decoration: none;
+}
+
+a:hover {
+  color: #333
+}
+
+.filter-btns {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .clear-show {
   visibility: visible;
+  color: hsl(180, 29%, 50%);
+  border: none;
+  cursor: pointer;
+
+}
+
+.clear-show:focus {
+  border: 0;
+  outline: none;
 }
 
 .clear-not-show {
   visibility: hidden;
 }
 
-.role span {
-  background-color: #555;
-  padding: 5px;
+.filter-btn-div {
+  background-color: hsl(180, 31%, 95%);
+  color: hsl(180, 29%, 50%);
+  margin: 10px;
 }
 
-.filter-box {
-  height: 100px;
-  display: flex;
-  justify-content: space-evenly;
-  align-content: center;
-  align-items: center;
-  margin-left: 10px;
-  margin-right: 10px;
+.role {
+  background-color: hsl(180, 29%, 50%);
+  color: hsl(180, 31%, 95%);
+  border: 1px solid hsl(180, 29%, 50%);
+  cursor: pointer;
+}
+
+.role:hover {
+  background-color: black;
+  border: 1px solid hsl(180, 31%, 95%);
 }
 
 
-button {
+
+.btn {
   margin: 10px;
   background-color: hsl(180, 31%, 95%);
   color: hsl(180, 29%, 50%);
   padding: 5px;
   font-size: 15px;
   border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+
+  background-color: hsl(180, 29%, 50%);
+  color: hsl(180, 31%, 95%);
+
 }
 
 .attribution {

@@ -19,12 +19,12 @@ const JobCard = ({ data, addToFilter }) => {
           <button
             key={data.id}
             value={roleName}
-            className="role"
+            className="btn"
             onClick={() => addToFilter(data.role)}
           >
             {roleName.charAt(0).toUpperCase() + roleName.toLowerCase().slice(1)}
           </button>
-          <button className="level" onClick={() => addToFilter(data.level)}>
+          <button className="btn" onClick={() => addToFilter(data.level)}>
             {data.level}
           </button>
           <Languages languages={data.languages} addToFilter={addToFilter} />

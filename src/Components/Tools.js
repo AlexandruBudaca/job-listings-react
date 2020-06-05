@@ -5,7 +5,7 @@ const Tools = (props) => {
     <div className="tools">
       {props.tools.map((tool, index) => (
         <button
-          className="tool"
+          className="btn"
           key={index}
           onClick={() => {
             props.addToFilter(tool);
