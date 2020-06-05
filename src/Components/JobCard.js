@@ -27,8 +27,8 @@ const JobCard = ({ data, addToFilter }) => {
           <button className="level" onClick={() => addToFilter(data.level)}>
             {data.level}
           </button>
-          <Languages languages={data.languages} />
-          <Tools tools={data.tools} />
+          <Languages languages={data.languages} addToFilter={addToFilter} />
+          <Tools tools={data.tools} addToFilter={addToFilter} />
         </div>
       </div>
     </div>

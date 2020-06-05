@@ -4,7 +4,13 @@ const Languages = (props) => {
   return (
     <div className="languages">
       {props.languages.map((language, index) => (
-        <button className="language" key={index}>
+        <button
+          className="language"
+          key={index}
+          onClick={() => {
+            props.addToFilter(language);
+          }}
+        >
           {language}
         </button>
       ))}

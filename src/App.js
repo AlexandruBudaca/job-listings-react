@@ -12,7 +12,6 @@ function App() {
       setFilters([...filters, newFilter]);
     }
   };
-  a;
 
   const removeFromFilter = (filterToRemove) => {
     setFilters(filters.filter((filter) => filter !== filterToRemove));
@@ -21,13 +20,13 @@ function App() {
     filters.length === 0
       ? jobsData
       : jobsData.filter((job) => {
-          const filterableValues = [job.role, job.level];
+          const roleName =
+            job.role.charAt(0).toUpperCase() + job.role.toLowerCase().slice(1);
 
-          return filters.includes((filter) =>
-            filterableValues
-              .map((_) => _.toLowerCase())
-              .includes(filter.toLowerCase())
-          );
+          const filterableValues = [roleName, job.level];
+          filterableValues.push(...job.languages);
+          filterableValues.push(...job.tools);
+          return filters.every((filter) => filterableValues.includes(filter));
         });
 
   return (
