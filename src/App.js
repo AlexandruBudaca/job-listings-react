@@ -16,18 +16,19 @@ function App() {
   const removeFromFilter = (filterToRemove) => {
     setFilters(filters.filter((filter) => filter !== filterToRemove));
   };
-  const filteredJobs =
-    filters.length === 0
-      ? jobsData
-      : jobsData.filter((job) => {
-          const roleName =
-            job.role.charAt(0).toUpperCase() + job.role.toLowerCase().slice(1);
+  const filteredJobs = jobsData.filter((job) => {
+    const roleName =
+      job.role.charAt(0).toUpperCase() + job.role.toLowerCase().slice(1);
 
-          const filterableValues = [roleName, job.level];
-          filterableValues.push(...job.languages);
-          filterableValues.push(...job.tools);
-          return filters.every((filter) => filterableValues.includes(filter));
-        });
+    const filterableValues = [
+      roleName,
+      job.level,
+      ...job.languages,
+      ...job.tools,
+    ];
+
+    return filters.every((filter) => filterableValues.includes(filter));
+  });
   const setClear = () => {
     setFilters([]);
   };
